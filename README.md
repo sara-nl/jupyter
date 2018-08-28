@@ -1,4 +1,4 @@
-# Grid documentation
+# Grid documentation2
 
 This directory contains the source code of documentation maintained with
 the Sphinx documentation system.
