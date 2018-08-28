@@ -1,0 +1,51 @@
+{% extends "basic/layout.html" %}
+
+{%- block extrahead %}
+<link rel="shortcut icon" type="image/x-icon" href="{{ pathto('_static/favicon.ico', 1) }}" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="{{ pathto('_static/ie6.css', 1) }}" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74131322-1', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+</script>
+{% endblock %}
+
+{% block header %}
+{%- if logo %}
+<div class="header">
+  <div class="logo">
+    <a href="{{ pathto(master_doc) }}">
+      <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
+    </a>
+  </div>
+</div>
+{%- endif %}
+<img src="{{ pathto('_static/surfsara.png', 1) }}" alt="SURFsara" style="position: absolute; top: 0px; right: 0px; z-index: 100" />
+{% endblock %}
+
+{%- block sidebarlogo %}{%- endblock %}
+{%- block sidebarsourcelink %}
+<p id="license">
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Grid documentation</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.surfsara.nl" property="cc:attributionName" rel="cc:attributionURL">SURFsara</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+</p>
+<script type="text/javascript">
+$(function() {
+  // Change the license position from a fixed position to an absolute position at the bottom of the page
+  var bottomBar = $('.related').filter(':last');
+  var offset = bottomBar.offset();
+  var license = $('#license');
+  offset['top'] -= license.outerHeight( true ) - parseInt( license.css('margin-top') );
+  license.css('position', 'absolute');
+  license.offset( offset );
+});
+</script>
+{%- endblock %}
