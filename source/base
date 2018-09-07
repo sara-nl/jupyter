@@ -1,25 +1,50 @@
-Pulling a git repository into a JupyterHub notebook with a link
+Pulling a git repository into a JupyterHub notebook using a link
 
-When starting a Jupyter notebook a common requirement is that there is some content in the directory where the notebook is started, or even that some notebook is started directly when launching a new notebook.
-We use "nbgitpuller" (https://github.com/jupyterhub/nbgitpuller) to offer this functionality.
-nbgitpuller synchronizes a folder in the notebook's user's filesystem, using git, whenever a user starts their server.
-This functionality is made accessible through a URL, https://your-domain.com/hub/user-redirect?git-pull?repo=https://github.com/repo/directoy/notebook.jyup .
-When a user clicks this link, a git pull is done onto the notebook's filesystem.
+When JupyterHub creates a notebook server for a new user, the directory of the user is empty be default.
+A common way to distribute content to the user is by using git clone/pull.
+This becomes a difficult process when the user is unfamiliar with git or does not have access to a terminal running on the notebook server.
+We use "nbgitpuller" (https://github.com/jupyterhub/nbgitpuller) to offer automatic git pulling so that the user can simply click a link and the repository will cloned/pulled.
+This functionality is made accessible through a URL, https://your-domain.com/hub/user-redirect?git-pull?repo=https://github.com/repo/&subPath=directoy/notebook.ipynb .
+When a user clicks this link, the specified repository will be cloned to the notebook's user base directory and subsequently redirected to 'directoy/notebook.ipynb'.
+If the link is clicked again, the repository will be pulled again.
 
 This feature is useful when
-1. You are running a JupyterHub for a class & want an easy way to distribute materials to your students without them having to understand what git is.
-2. You have a different out of band method for collecting completed assignments / notebooks from students, since they can not just 'push it back' via git.
+1. You are running a JupyterHub for a class and you want an easy way to distribute material to your students without them understanding git.
+2. Students do not need to submit assignments back using git.
 
-This feature is only meant for one-way git pulling / one-time cloning and is not meant to be used interactively with git pushing.
+To create the link
 
-Creating the link
+Simply substitute each '<variable>' with a 'value'
 
-myjupyterhub.org/hub/user-redirect/git-pull?repo=<your-repo-url>&branch=<your-branch-name>&subPath=<subPath>
+<host>/hub/user-redirect/git-pull?repo=<your-repo-url>&branch=<your-branch-name>&subPath=<redirection>
+
+For example,
+
+<host> = base.jove.surfsara.nl
+<your-repo-url> = https://git.osd.surfsara.nl/srb/notebooks
+<your-branch-name> = master
+<redirection> = track1-unix-cluster/cartesius-demo.md
+
+The resulting link will be:
+
+base.jove.surfsara.nl/hub/user-redirect/git-pull?repo=https://git.osd.surfsara.nl/srb/notebooks&branch=master&subPath=track1-unix-cluster/cartesius-demo.md
+
+Additionally, 'http://' should be added to the
+
+
+https://base.jove.surfsara.nl/hub/login
 
 Default values
 repo= (no value, this value needs to be set)
 subPath=/
 branch=master
+
+For more detailed information on how to create a link see https://the-littlest-jupyterhub.readthedocs.io/en/latest/howto/content/nbgitpuller.html
+and the application https://mybinder.org/v2/gh/jupyterhub/nbgitpuller/master?urlpath=apps/binder%2Flink_generator.ipynb
+
+Send the link to your users in some way - email, slack, post a shortened version (with bit.ly maybe) on the wall, or put it on your syllabus page (like UC Berkeley’s data8 does). Whatever works for you :)
+When users click the link, they will be asked to log in to the hub if they have not already.
+Users will see a progress bar as the git repository is fetched & any automatic merging required is performed.
 
 Resynchronizing
 
@@ -33,6 +58,10 @@ If a file exists locally but is untracked by git (maybe someone uploaded it manu
 
 For more details see the official documentation https://github.com/jupyterhub/nbgitpuller#merging-behavior
 
+Advanced
+
+"nbgitpuller" does not support git submodules, so you need to pull each individual git repository.
+The git repository to pull from needs to be public.
 
 Using to synchronize a folder
 We recommend using the tool nbgitpuller to synchronize a folder in your user’s filesystem with a git repository whenever a user starts their server. Note that this syncing can also trigger by the users pressing a like
