@@ -43,8 +43,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Grid Documentation'
-copyright = u'2015, Grid Support <helpdesk@surfsara.nl>'
+project = u'JupyterHub Documentation'
+copyright = u'2018, SDA Support <helpdesk@surfsara.nl>'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -176,7 +176,7 @@ html_title = "{} v{}".format(project, release)
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'GridDocumentationdoc'
+htmlhelp_basename = 'SDADocumentationdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -226,8 +226,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'griddocumentation', u'Grid Documentation Documentation',
-     [u'Grid Support <helpdesk@surfsara.nl>'], 1)
+    ('index', 'sdadocumentation', u'SDA Documentation',
+     [u'SDA Support <helpdesk@surfsara.nl>'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -240,8 +240,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'GridDocumentation', u'Grid Documentation Documentation',
-   u'Grid Support <helpdesk@surfsara.nl>', 'GridDocumentation', 'One line description of project.',
+  ('index', 'SDADocumentation', u'SDA Documentation Documentation',
+   u'SDA Support <helpdesk@surfsara.nl>', 'SDADocumentation', 'One line description of project.',
    'Miscellaneous'),
 ]
 
