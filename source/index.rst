@@ -3,18 +3,17 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-
 .. _contents:
 
 *******************
-Grid documentation2
+Grid documentation4
 *******************
 
 Welcome to the documentation for using the Grid services at `SURFsara`_. The information in this tutorial will help you get started with the Grid, learn best techniques to successfully port your application to the Grid infrastructure and stay up-to-date with our system developments. We welcome your comments at helpdesk@surfsara.nl or your :ref:`contribution <doc-howto>` to help us improve the documentation.
 
 .. sidebar:: Need help?
 
-	Do you need help with this tutorial? We are more than willing to assist! Just contact us at helpdesk@surfsara.nl.
+Do you need help with this tutorial? We are more than willing to assist! Just contact us at helpdesk@surfsara.nl.
 
 
 .. _basics:
