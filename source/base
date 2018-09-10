@@ -1,20 +1,16 @@
 Pulling a git repository into a JupyterHub notebook using a link
 
-When JupyterHub creates a notebook server for a new user, the directory of the user is empty be default.
-A common way to distribute content to the user is by using git clone/pull.
-This becomes a difficult process when the user is unfamiliar with git or does not have access to a terminal running on the notebook server.
+A user's home directory is empty be default when JupyterHub creates a new notebook server.
+A common way to distribute content to the user's home directory is through git clone/pull.
+It can be difficult making the user manage git synchronization if the user is unfamiliar with git or does not have access to a terminal running on the notebook server.
 We use "nbgitpuller" (https://github.com/jupyterhub/nbgitpuller) to offer automatic git pulling so that the user can simply click a link and the repository will cloned/pulled.
-This functionality is made accessible through a URL, https://your-domain.com/hub/user-redirect?git-pull?repo=https://github.com/repo/&subPath=directoy/notebook.ipynb .
-When a user clicks this link, the specified repository will be cloned to the notebook's user base directory and subsequently redirected to 'directoy/notebook.ipynb'.
+This functionality is made accessible through a URL, such as https://your-domain.com/hub/user-redirect?git-pull?repo=https://github.com/repo/&subPath=directoy/notebook.ipynb .
+When a user clicks this link, the specified repository will be cloned to the user home directory and subsequently redirected to 'directoy/notebook.ipynb' which specifies a notebook in the git repository.
 If the link is clicked again, the repository will be pulled again.
 
-This feature is useful when
-1. You are running a JupyterHub for a class and you want an easy way to distribute material to your students without them understanding git.
-2. Students do not need to submit assignments back using git.
+Creating the link
 
-To create the link
-
-Simply substitute each '<variable>' with a 'value'
+Simply substitute each '<variable>' with your 'value'
 
 <host>/hub/user-redirect/git-pull?repo=<your-repo-url>&branch=<your-branch-name>&subPath=<redirection>
 
@@ -25,105 +21,34 @@ For example,
 <your-branch-name> = master
 <redirection> = track1-unix-cluster/cartesius-demo.md
 
-The resulting link will be:
-
+Resulting in the following link.
 base.jove.surfsara.nl/hub/user-redirect/git-pull?repo=https://git.osd.surfsara.nl/srb/notebooks&branch=master&subPath=track1-unix-cluster/cartesius-demo.md
+Additionally, 'http://' can be added.
 
-Additionally, 'http://' should be added to the
-
-
-https://base.jove.surfsara.nl/hub/login
-
-Default values
-repo= (no value, this value needs to be set)
-subPath=/
-branch=master
+This will clone the 'https://git.osd.surfsara.nl/srb/notebooks' repository from the 'master' branch to the user's home directory on JupyterHub 'http://base.jove.surfsara.nl' and then redirect the user to 'track1-unix-cluster/cartesius-demo.md'.
 
 For more detailed information on how to create a link see https://the-littlest-jupyterhub.readthedocs.io/en/latest/howto/content/nbgitpuller.html
 and the application https://mybinder.org/v2/gh/jupyterhub/nbgitpuller/master?urlpath=apps/binder%2Flink_generator.ipynb
 
-Send the link to your users in some way - email, slack, post a shortened version (with bit.ly maybe) on the wall, or put it on your syllabus page (like UC Berkeley’s data8 does). Whatever works for you :)
-When users click the link, they will be asked to log in to the hub if they have not already.
-Users will see a progress bar as the git repository is fetched & any automatic merging required is performed.
+The user will be promted for login credentials after linking the link.
+If the notebook server has not been initialized when the user clicks the link (i.e. the notebook environment is not ready) the notebook server will be started first and then the clone will be performed.
+In this case, the user might have to wait from 5 secs up to a few minutes.
+Clicking the link repeatedly does no harm.
+Since each user is prompted for login credentials, the same link can be used for all users.
+Consider sending the user a shortended version of the link using f.ex. bit.ly.
 
 Resynchronizing
 
 Edits in the remote git repository can be reflected by clicking the link again.
 This will call git pull again.
-If some edits have been made in the local filesystem (the notebook), those changes will be prefered to the changes in the remote repository.
+If some edits have been made by the user in files in the git repository, those changes will take presidence over the changes in the remote repository.
 
 If a file was deleted locally but is present in the remote, the remote file is restored to local repository.
-This allows users to get a 'fresh copy' of a file by just deleting the file locally & clicking the link again.
-If a file exists locally but is untracked by git (maybe someone uploaded it manually), then rename the file, and pull in remote copy.
+This allows users to get a 'fresh copy' of a file by just deleting the file locally and clicking the link again.
 
 For more details see the official documentation https://github.com/jupyterhub/nbgitpuller#merging-behavior
 
-Advanced
+Advanced notes
 
 "nbgitpuller" does not support git submodules, so you need to pull each individual git repository.
-The git repository to pull from needs to be public.
-
-Using to synchronize a folder
-We recommend using the tool nbgitpuller to synchronize a folder in your user’s filesystem with a git repository whenever a user starts their server. Note that this syncing can also trigger by the users pressing a like
-
-To use nbgitpuller, first make sure that you install it in your Docker image. Once this is done, you’ll have access to the nbgitpuller CLI from within JupyterHub. You can run it with a postStart hook with the following configuration
-
-singleuser:
-  lifecycleHooks:
-    postStart:
-      exec:
-        command: ["gitpuller", "https://github.com/data-8/materials-fa17", "master", "materials-fa"]
-This will synchronize the master branch of the repository to a folder called $HOME/materials-fa each time a user logs in. See the nbgitpuller documentation for more information on using this tool.
-
-Warning
-nbgitpuller will attempt to automatically resolve merge conflicts if your user’s repository has changed since the last sync. You should familiarize yourself with the nbgitpuller merging behavior prior to using the tool in production.
-------------
-What is it?
-nbgitpuller allows you to construct a URL that points to a remote git repository. When it is clicked, nbgitpuller will pull the contents of this repository into the user's current folder within Jupyter, while rendering a nice status page. This is especially useful when running on a JupyterHub, since it allows easy distribution of materials to users without requiring them to understand git.
-
-Merging behavior
-When a link is clicked, we try to make opinionated intelligent guesses on how to do a merge automatically, without making the user do a conflict resolution. nbgitpuller is designed to be used by folks who do not know that git is being used underneath, and are only pulling content one way from a source and modifying it - not pushing it back. So we have made the following opinionated decisions.
-
-
-You can construct a working nbgitpuller URL like this:
-
-<your-jupyterhub-prefix>.org/hub/user-redirect/git-pull?repo=<your-repo-url>&branch=<your-branch-name>&subPath=<subPath>&app=<notebook | lab>
-repo is the URL of the git repository you want to clone. This parameter is required.
-branch is the branch name to use when cloning from the repository. This parameter is optional and defaults to master.
-subPath is the path of the directory / notebook inside the repo to launch after cloning. This parameter is optional, and defaults to opening the base directory of the linked Git repository.
-app This parameter is optional and defaults to either the environment variable NBGITPULLER_APP's value or notebook if it is undefined. The allowed values are lab and notebook, the value will determine in what application view you end up in.
-urlPath will, if specified, override app and subPath and redirect blindly to the specified path.
-Local development
-You can easily set up to develop this locally, without requiring a JupyterHub. It requires python3.
-
-Clone this repository
-
-git clone https://github.com/data-8/nbgitpuller
-Change into it and create a virtual environment
-
-cd nbgitpuller
-python3 -m venv .
-Install it with symlinks, so you can easily play with it.
-
-pip install -e .
-Enable the jupyter notebook server extension. This provides the git-pull URL handlers.
-
-jupyter serverextension enable --sys-prefix nbgitpuller
-Run a jupyter notebook locally!
-
-jupyter notebook
-Construct a nbgitpuller URL exactly like you would for a hub, but instead of prefixing it with myjupyterhub.org/hub/user-redirect, just use localhost:8888 or whatever the url of your running notebook is. For example, the following URL would pull down a repo:
-
-localhost:8888/git-pull?repo=https://github.com/data-8/materials-fa17
-Make the changes you want to make, and restart the jupyter notebook for them to take effect.
-
-Using the command line interface
-It is also possible to use nbgitpuller from the command line. For example, here's how to synchronize the repository listed above using the command line:
-
-gitpuller https://github.com/data-8/materials-fa17 master my_materials_fa17
-This will synchronize the master branch of the repository to a folder called my_materials_fa17.
-
-See the command line help for more information.
-
-https://github.com/jupyterhub/nbgitpuller#merging-behavior
-https://github.com/jupyterhub/nbgitpuller
+The git repository needs to be public.
