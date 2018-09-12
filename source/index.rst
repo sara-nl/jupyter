@@ -1,5 +1,5 @@
 *********************
-Jupyter Documentation
+Jupyter documentation
 *********************
 
 .. contents::
