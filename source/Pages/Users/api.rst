@@ -1,4 +1,4 @@
-.. _api:
+.. _users_api:
 
 **********************
 User management api
@@ -10,7 +10,7 @@ In this page you will find general information about the Jupyter api, how it wor
     :depth: 4
 
 
-.. _access_api:
+.. _users_access_api:
 
 ======
 Access
