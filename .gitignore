@@ -2,3 +2,4 @@
 .DS_Store
 source/build/
 *.pyc
+.idea
