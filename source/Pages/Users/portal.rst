@@ -1,4 +1,4 @@
-.. _portal:
+.. _users_portal:
 
 **********************
 User management portal
@@ -7,7 +7,7 @@ User management portal
 .. contents:: 
     :depth: 4
 
-.. _general_portal:
+.. _users_general_portal:
 
 =======
 General
@@ -16,18 +16,18 @@ General
 The user management portal is an interface to add, modify and delete Jupyter
 users and groups.
 
-.. _access_portal:
+.. _users_access_portal:
 
 ====================
 Access to the portal
 ====================
-After first setup of the Jupyter environment an e-mail has been send to the
+After first setup of the Jupyter environment an e-mail has been sent to the
 contact person of the created Jupyter environment. This e-mail contains the
 login information about the portal.
 
 **URL:** https://<custom>-portal.jove.surfsara.nl/
 
-.. _users_portal:
+.. _users_users_portal:
 
 ========================
 Create new Jupyter users
@@ -47,7 +47,7 @@ The portal enables you to add users one by one. See :ref:`API documentation <use
 users at once or other advanced options.
 
 
-.. _groups_portal:
+.. _users_groups_portal:
 
 =================================
 Enable users to access the portal
