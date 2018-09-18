@@ -1,6 +1,6 @@
-*********************
-Jupyter documentation
-*********************
+************************
+JupyterHub documentation
+************************
 
 .. contents::
 
