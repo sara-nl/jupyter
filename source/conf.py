@@ -44,7 +44,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'JupyterHub Documentation'
-copyright = u'2018, Support <helpdesk@surfsara.nl>'
+copyright = u'2018, SURFsara <helpdesk@surfsara.nl>'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

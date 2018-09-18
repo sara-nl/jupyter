@@ -6,7 +6,8 @@ JupyterHub documentation
 
 .. sidebar:: Need help?
 
-   Do you need help? We are more than willing to assist! Just contact us at helpdesk@surfsara.nl.
+   We are more than willing to assist!
+   Just contact us at helpdesk@surfsara.nl.
 
 ==============
 Managing users
@@ -17,3 +18,4 @@ Managing users
 
    Pages/Users/portal
    Pages/Users/api
+   Pages/Data/distributing
