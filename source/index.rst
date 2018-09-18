@@ -18,4 +18,11 @@ Managing users
 
    Pages/Users/portal
    Pages/Users/api
+
+====================
+Distributing content
+====================
+.. toctree::
+   :maxdepth: 2
+
    Pages/Data/distributing
