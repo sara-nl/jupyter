@@ -21,11 +21,11 @@ users and groups.
 ====================
 Access to the portal
 ====================
-After first setup of the Jupyter environment an e-mail has been sent to the
-contact person of the created Jupyter environment. This e-mail contains the
-login information about the portal.
+After first setup of the JupyterHub environment an e-mail has been sent to the
+contact person of the created JupyterHub environment. This e-mail contains the
+login information for the portal.
 
-**URL:** https://<custom>-portal.jove.surfsara.nl/
+**URL:** `https://<custom>-portal.jove.surfsara.nl/ <https://<custom>-portal.jove.surfsara.nl/>`_
 
 .. _users_users_portal:
 
@@ -46,14 +46,17 @@ Select the tab *ADD USER* to create new users:
 The portal enables you to add users one by one. See :ref:`API documentation <users_api>` to add multiple
 users at once or other advanced options.
 
+By default, new users have the same privilege as a member in the group *users* which can log in and access notebooks.
+
 
 .. _users_groups_portal:
 
-=================================
-Enable users to access the portal
-=================================
-All users that are member of the group *admin* are allowed to login the portal.
+=================================================
+Enable users to access the user-management portal
+=================================================
+Users which are members of the group *admin* can login to the portal and create more users.
 By default the user *portaladmin* has been added to the group *admin*.
+Members from other groups cannot access the portal and create more users.
 
 Select the tab *GROUP MEMBERS* to add members to the group *admin*:
 

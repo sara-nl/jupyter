@@ -5,9 +5,8 @@ User management api
 *******************
 
 The user management api is an advanced way to add, modify and delete Jupyter
-users and groups. Please be careful with adding and changing users and groups
-with the api. Some special settings are needed and without these settings it may
-does not work properly anymore.
+users and groups. Please be careful when adding and changing users and groups
+with the api. Some special settings are needed and without these settings it may not work properly anymore.
 
 An easier way to manage users and groups is by using the :ref:`portal <users_portal>`
 
@@ -24,7 +23,7 @@ After first setup of the Jupyter environment an e-mail has been sent to the
 contact person of the created Jupyter environment. This e-mail contains the
 api credentials.
 
-- Api: https://<custom>-api.jove.surfsara.nl/usermgmtapi/
+- Api: `https://<custom>-api.jove.surfsara.nl/usermgmtapi/ <https://<custom>-api.jove.surfsara.nl/usermgmtapi/>`_
 - Application: jaas-ldap-api
 - Key: **********
 
@@ -35,7 +34,7 @@ API specifications
 ==================
 The swagger interface makes it possible to make changes to users and groups via api calls at a website:
 
-- https://<custom>-api.jove.surfsara.nl/usermgmtapi/
+- `https://<custom>-api.jove.surfsara.nl/usermgmtapi/ <https://<custom>-api.jove.surfsara.nl/usermgmtapi/>`_
 
 This is also the documentation of the api.
 
