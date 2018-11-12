@@ -11,7 +11,7 @@ Distributing data
 .. _content_distributing:
 
 ==========================================================
-Clone a git repository using a link
+Cloning a git repository on start / with a link
 ==========================================================
 
 A user's home directory is empty by default when JupyterHub creates a new notebook server.
