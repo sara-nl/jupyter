@@ -1,51 +1,47 @@
 .. _users_api:
 
-*******************
 User management api
-*******************
+===================
 
-The user management api is an advanced way to add, modify and delete Jupyter
-users and groups. Please be careful when adding and changing users and groups
-with the api. Some special settings are needed and without these settings it may not work properly anymore.
+The `user management API` is a public API which can be used to add, modify and delete Jupyter users and groups. 
+Please be careful when adding and changing users and groups with the api. Some special settings are needed and without these settings it may not work properly anymore.
 
-An easier way to manage users and groups is by using the :ref:`portal <users_portal>`
+We also offer a UI which consumes this API :ref:`portal <users_portal>` but we reccomend the API for bulk user creation.
 
 .. contents:: 
-    :depth: 4
+    :depth: 2
 
 
 .. _users_credentials_api:
 
-===========
 Credentials
-===========
+-----------
+
 After first setup of the Jupyter environment an e-mail has been sent to the
 contact person of the created Jupyter environment. This e-mail contains the
 api credentials.
+::
 
-- Api: `https://<custom>-api.jove.surfsara.nl/usermgmtapi/ <https://<custom>-api.jove.surfsara.nl/usermgmtapi/>`_
-- Application: jaas-ldap-api
-- Key: **********
+  Api: https://<something>-api.projects.sda.surfsara.nl/usermgmtapi/
+  Application: jaas-ldap-api
+  Key: **********
 
 .. _users_specifications_api:
 
-==================
 API specifications
-==================
-The swagger interface makes it possible to make changes to users and groups via api calls at a website:
+------------------
 
-- `https://<custom>-api.jove.surfsara.nl/usermgmtapi/ <https://<custom>-api.jove.surfsara.nl/usermgmtapi/>`_
+The swagger interface makes it possible to make changes to users and groups via api calls at a website:
+::
+
+  https://<something>-api.projects.sda.surfsara.nl/usermgmtapi/
 
 This is also the documentation of the api.
-
-For managing single users and groups we advise to use the :ref:`portal <users_portal>`. For advanced usage
-it is possible to make api calls by the swagger api .
-
 
 This example shows how to use it:
 
 - Click on *Expand Operations* below 'This API provides endpoints for managing JAAS LDAP user entries.'
-- Fill credentials at X-API-Application and X-API-Key fields
+- Fill credentials at *X-API-Application* and *X-API-Key* fields
 
 .. image:: /Images/screenshot_swagger_users.png
 
@@ -56,9 +52,8 @@ This example shows how to use it:
 
 .. _users_commandline_api:
 
-=====================
 Command line example
-=====================
+--------------------
 
 - Copy curl command from swagger interface:
 
@@ -70,29 +65,28 @@ Command line example
     curl -X GET --header 'Accept: application/json'
     --header 'X-API-Application: jaas-ldap-api'
     --header 'X-API-Key: *********'
-    'https://laura-dev-api.jove.surfsara.nl/usermgmtapi/v1/jaas-ldap-rest/user/'
+    'https://dev-api.jove.surfsara.nl/usermgmtapi/v1/jaas-ldap-rest/user/'
 
-    {"users":[{"dn":"cn=laura,ou=users,dc=laura-dev,dc=jove,dc=surfsara,dc=nl",
+    {"users":[{"dn":"cn=laura,ou=users,dc=dev,dc=jove,dc=surfsara,dc=nl",
     "givenName":"Laura","sn":"Leistikow","cn":"laura","uid":"laura",
     "userPassword":"*******","uidNumber":"5001","gidNumber":"500",
-    "homeDirectory":"","loginShell":"","mail":"laura@laura-dev.jove.surfsara.nl",
+    "homeDirectory":"","loginShell":"","mail":"laura@dev.jove.surfsara.nl",
     "employeeType":"portal"},{"dn":"cn=portaladmin,ou=users,dc=laura-dev,
     dc=jove,dc=surfsara,dc=nl","givenName":"portaladmin","sn":"smoketest",
     "cn":"portaladmin","uid":"portaladmin","userPassword":"*********",
     "uidNumber":"1003","gidNumber":"501","homeDirectory":"/}
 
 
-==========================
 Add multiple users example
-==========================
+--------------------------
 
-- Create add_multiple_user script
+1) Create add_multiple_user script
 
 .. code-block:: bash
 
     vi add_multiple_user.bash
 
-- Copy code and replace credentials
+2)  Copy code and replace credentials
 
 .. code-block:: bash
 
@@ -127,13 +121,13 @@ Add multiple users example
 
         done < "$input"
 
-- Create users.cvs file
+3) Create users.cvs file
 
 .. code-block:: bash
 
     vi users.cvs
 
-- Add users in users.cvs: login, firstname, lastname, password, email(optional)
+4) Add users in users.cvs: login, firstname, lastname, password, email(optional)
 
 .. code-block:: bash
 
@@ -141,7 +135,7 @@ Add multiple users example
     login2,firstname2,lastname2,password2
     login3,firstname3,lastname3,password3
 
-- Run the add_multiple_user.bash script
+5) Run the add_multiple_user.bash script
 
 .. code-block:: bash
 
@@ -160,14 +154,7 @@ Add multiple users example
     "userPassword":"[B@582421cf","uidNumber":"5004","gidNumber":"500","homeDirectory":"",
     "loginShell":"","mail":"login3@laura-dev.jove.surfsara.nl","employeeType":"portal"}
 
-- Check the portal
+6) Check the portal
 
 .. image:: /Images/screenshot_portal_show_users.png
-
-
-
-
-
-
-
 
