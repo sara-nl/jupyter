@@ -28,19 +28,21 @@ This will start a new notebook just for you. The inital loading can take everyth
 All work done by you in this notebook is saved between logins.
 That being said, we do not guarantee the data on the notebook and you should not treat the notebook as storage medium and save your data/work as you would do on other systems (git etc.). 
 
+The notebooks
+-------------
+
 Each notebook started from JupyterHub will have the same tools installed.
-We offer a few **pre-configured** notebooks based on the selection available on `jupyter-docker-stacks <https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html>`_
-In addition to these images we can further customize these images with additional packages or plugins.
+We offer a **pre-configured** notebook which is based on the "jupyterhub/datascience-notebook" available on `jupyter-docker-stacks <https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html>`_ and we refer to this webpage for detailed package information.
+On request, these images can be customized with additional packages or plugins.
 
-.. jupyter-docker-stacks: 
-
-The notebooks which we offer come with **nbgitpuller** which allows you to distribute content to all your users via a link. See more in :ref:`distributing content <distributing>`.
-For simple python package management keep in mind that installing packages at the user-level will persist between logins.
+For simple python package management, keep in mind that installing packages at the user-level will persist between logins.
 ::
 
   pip install --user package-name
 
-Packages installed with-out the "--user" flag will not persist between logins.
+Packages installed without the "--user" flag will not persist between logins.
+
+The notebook comes with **nbgitpuller** which allows you to distribute content to all your users via a link. See more in :ref:`distributing content <distributing>`.
 
 Documentation
 --------------
