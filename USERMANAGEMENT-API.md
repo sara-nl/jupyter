@@ -2,10 +2,10 @@
 The user management API is a public HTTP API which can be used to add, modify and delete Jupyter users. In contrast to the [web portal](USERMANAGEMENT.md), which offers an intuitive user interface, the user management API is usable  through scripting, with tools like [curl](https://curl.haxx.se/), or with the API user interface. The API is most useful when there is a need to quickly generate many new users based on a list of usernames and passwords, for example.
 
 ## Credentials
-The URL to access the API will have been provided to you by SURFsara, as well as the API key. You will use the key to authenticate with the API, together with the *application*, which is given as `jaas-ldap-api`.
+The 'User management API URL' to access the API will have been provided to you by SURFsara, as well as the 'User management API-key'. You will use the key to authenticate with the API, together with the *application*, which is given as `jaas-ldap-api`.
 
 ## API specifications
-The HTTP API is built with [Swagger](https://swagger.io/), which provides a user interface to experiment with its functionality. Go to the provided URL, and you will see a list of API calls. There are two sets of API calls: those for managing groups, and those for managing users. Since group management is obsolete, we will not deal with it here, and we advise you not do change or delete the default groups. This can cause a malfunctioning environment.
+The HTTP API is built with [Swagger](https://swagger.io/), which provides a user interface to experiment with its functionality. Go to the provided URL, and you will see a list of API calls. There are two sets of API calls: those for managing groups, and those for managing users. Since group management is obsolete, we will not deal with it here, and we advise you not to make changes or delete the default groups. This can cause a malfunctioning environment.
 
 ## Getting a list of users
 To list users through the user interface, click on *Expand Operations* below 'This API provides endpoints for managing JAAS LDAP user entries.' Then fill in the credentials as follows:
@@ -85,7 +85,7 @@ login2,firstname2,lastname2,password2
 login3,firstname3,lastname3,password3
 ```
 
-Run the `add-multiple-users.bash` script. The script will read the file created in the second step, and add all users with the API. Each time a user is added, the JSON response of the API will be printed.
+Third, run the `add-multiple-users.bash` script. The script will read the file created in the second step, and add all users with the API. Each time a user is added, the JSON response of the API will be printed.
 
 ```bash
 $ chmod +x add_multiple_user.bash
@@ -104,6 +104,6 @@ $ ./add_multiple_user.bash
 "loginShell":"","mail":"login3@laura-dev.jove.surfsara.nl","employeeType":"portal"}
 ```
 
-Now verify in the portal that the users have been created:
+Finally, verify in the portal that the users have been created:
 
 ![image](images/screenshot_portal_show_users.png)

@@ -4,9 +4,9 @@ This page will provide instructions on how to use the environment as an end-user
 ## Starting a notebook environment
 The hub (or JupyterHub) is the entry point for your users and is located at `https://jupyter.something.sda-dev-projects.nl`. After logging in with a valid username and password, a notebook environment will start in a container. The initial start up process may take up to two minutes.
 
-After a container has started, the Jupyter notebook environment will display a file browser showing you all files and directories in your **home directory**. Any changes you make in your home directory will be saved between logins. This includes changes to notebooks in your home directory, as well as modifications to any other data.
+After a container has started, the Jupyter notebook environment will display a file browser showing you all files and directories in your **home directory**. Any changes you make in your home directory will be saved and available in future logins. This includes changes to notebooks in your home directory, as well as modifications to any other data.
 
-That being said, we cannot the integrity of the data in your notebook environment, and you should not rely on the notebook's storage medium. Important data and work should be saved to another system by downloading it from the environment.
+That being said, we cannot guarantee the integrity of the data in your notebook environment, and you should not rely on the notebook's storage medium. Important data and work should be saved to another system by downloading it from the environment.
 
 ## Memory usage
 In addition, notebooks are provisioned with the [nbresuse](https://github.com/yuvipanda/nbresuse) Jupyter extension, which will show the **total memory usage of the container** in the top-right corner of each notebook, as well as the **total memory available to the container**. When the memory usage exceeds the available memory the container may be deleted by the environment, so it is important to keep the memory usage below the available memory limit.
