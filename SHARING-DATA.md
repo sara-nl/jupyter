@@ -9,7 +9,7 @@ Although the user's home directory is persistent, you should not rely on it as a
 Administrators cannot access users' home directories: they are only accessible through the username and password from the users themselves.
 
 ## Shared data storage
-The shared data storage provides a storage solution for hosting large data sets, and is managed by administators. Data in the shared data storage solution is available **read-only** inside each notebook container.
+The shared data storage provides a storage solution for hosting large data sets, and is managed by administators. Data in the shared data storage solution is available **read-only** inside each notebook container under `/data`.
 
 ## Sharing data
 The Jupyter notebook service provides several ways of sharing data with end-users:
@@ -79,17 +79,22 @@ Accessing the URL again will update the user's home directory from the specified
 
 ## Option 3: sharing read-only data through the shared data storage
 Large data sets can be shared with user through the shared data storage. All data on the shared data storage will be available in users' notebook containers as a **read-only data set**.
-Since the data is provided through users read-only, changes to the data will need to be made by first copying to the user's home directory, and then modifying the data.
+Since the data on the shared storage is read-only, users should first copy the data to their home directory before they can modify the data.
 
-The shared data storage is hosted through an S3-compatible object store called Minio, available in each Jupyter environment. The URL of the object store for your environment will have been provided to you, as well as the access key and secret key needed to log in. All data uploaded to the object store is synchronized to the machines on which notebook containers are running, and will be mounted automatically in users' notebook containers under `/data`.
+The shared data storage is hosted through an S3-compatible object store called Minio, available in each Jupyter environment. The 'Shared data storage URL' of the object store for your environment will have been provided to you, as well as the 'Shared data storage access key' and 'Shared data storage access key' needed to log in. All data uploaded to the object store is synchronized to the machines on which notebook containers are running, and will be mounted automatically in users' notebook containers under `/data`.
 
 ### Managing the shared data storage
-There are several ways of managing data in the shared data storage: through the web interface, via an S3 client, and with the Minio command line client. These three options will be discussed below.
+There are several ways of managing data in the shared data storage: 
+* Through the web interface
+* Via an S3 client
+* With the Minio command line client. 
+
+These three options will be discussed below.
 
 ### The Minio web interface
-The first is through the web interface available under the provided URL. After entering your access and secret key and logging, you should see a web interface with a file browser. On the left side of the file browser will be a list of so-called *buckets*. The data storage will by default have a single bucket called `data`, listed on the left side of the screen. All data in this bucket will be available automatically in the users' notebook containers.
+The first is through the web interface available under the provided URL. After entering your access and secret key and login, you should see a web interface with a file browser. On the left side of the file browser will be a list of so-called *buckets*. The data storage will by default have a single bucket called `data`, listed on the left side of the screen. All data in this bucket will be available automatically in the users' notebook containers.
 
-Clicking on the bucket `data` on the left side of the screen will show the contents of the bucket on the right side of the screen. Since this bucket is initially empty, you might not see any files listed.
+Clicking on the bucket `data` on the left side of the screen will show the contents of the bucket on the right side of the screen. Since this bucket is initially empty, you will not see any files listed until data has been uploaded.
 
 To upload a file, click on the plus sign in the red circle in the bottom-right corner of the screen, and select upload file (the top option) in the menu that pops up. After selecting files to upload in the file selection dialog, Minio will upload the files one by one.
 
