@@ -1,3 +1,0 @@
-[submodule "readthedocs-docker-images"]
-	path = readthedocs-docker-images
-	url = https://github.com/rtfd/readthedocs-docker-images.git
