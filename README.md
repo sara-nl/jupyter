@@ -17,8 +17,6 @@ When an environment has been created for you, you will be provided with the foll
 * Shared data storage URL: `https://data.something.sda-dev-projects.nl`
 * Shared data storage access key: \*
 * Shared data storage secret key: \*
-* Shared data upload username: \*
-* Shared data upload password: \*
 
 The remainder of this guide will assume you will substitute `something` with the name of environment in the URLs above.
 

@@ -36,7 +36,7 @@ Additional users can be made administrator by moving them to the `admin` group v
 
 To make a user an administrator, click the user name in the left panel, and then on the right arrow '>'. Click the 'SUBMIT CHANGES' button, and the user will now be made an administrator.
 
-Click the 'RESET' button, and any unsubmitted changes will be reverted back.
+Click the 'RESET' button, and any unsubmitted changes will be reverted.
 
 ### Updating, showing and deleting users
 The tabs **MODIFY USER** and **DELETE USER** allow for updates to existing users, and deletion of users, respectively. The **SHOW USERS** tab will list all users and their groups, as shown in the following image.

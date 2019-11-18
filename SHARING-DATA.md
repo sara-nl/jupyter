@@ -92,7 +92,7 @@ There are several ways of managing data in the shared data storage:
 These three options will be discussed below.
 
 ### The Minio web interface
-The first is through the web interface available under the provided URL. After entering your access and secret key and login, you should see a web interface with a file browser. On the left side of the file browser will be a list of so-called *buckets*. The data storage will by default have a single bucket called `data`, listed on the left side of the screen. All data in this bucket will be available automatically in the users' notebook containers.
+The first is through the web interface available under the provided URL. After entering your access and secret key and logging in, you should see a web interface with a file browser. On the left side of the file browser will be a list of so-called *buckets*. The data storage will by default have a single bucket called `data`, listed on the left side of the screen. All data in this bucket will be available automatically in the users' notebook containers.
 
 Clicking on the bucket `data` on the left side of the screen will show the contents of the bucket on the right side of the screen. Since this bucket is initially empty, you will not see any files listed until data has been uploaded.
 
