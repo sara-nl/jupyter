@@ -27,7 +27,7 @@ To execute the same query from the command line with curl, copy the curl command
 $ curl -X GET --header 'Accept: application/json'
 --header 'X-API-Application: jaas-ldap-api'
 --header 'X-API-Key: *********'
-'https://dev-api.jove.surfsara.nl/usermgmtapi/v1/jaas-ldap-rest/user/'
+'https://api.demo.sda-projects.nl/usermgmtapi/v1/jaas-ldap-rest/user/'
 
 {"users":[{"dn":"cn=laura,ou=users,dc=dev,dc=jove,dc=surfsara,dc=nl",
 "givenName":"Laura","sn":"Leistikow","cn":"laura","uid":"laura",
@@ -47,7 +47,7 @@ First, create a Bash script called `add-multiple-users.bash`, by copy-pasting th
 ```bash
 #!/bin/bash
 
-url="https://laura-dev-api.jove.surfsara.nl/usermgmtapi/v1/jaas-ldap-rest/user/"
+url="https://api.demo.sda-projects.nl/usermgmtapi/v1/jaas-ldap-rest/user/"
 application="jaas-ldap-api"
 key="******************"
 input="users.csv"

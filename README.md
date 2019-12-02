@@ -5,16 +5,34 @@ For more information about this service, please see the overview page at the [SU
 
 This user guide will assume you will have obtained access to a deployed Jupyter notebook environment, and will explain how to manage users and data in the environment.
 
+## Onboarding information Jupyter environment
+To create an Jupyter environment, Surfsara requires onboarding information. 
+This information is used to right-size the Jupyter cluster, perpare the (shared) storage and install the required software packages. The below information should be provided:
+
+* The start and end date of the deployment
+* The number of users
+* The capacity of the notebook pods, given as:
+    * Light: 1 vcore, 3GB RAM
+    * Medium: 2 vcores, 6 GB RAM
+    * Heavy: 4 vcores, 12 GB RAM
+* The per-user storage, in GB
+* The amount of shared storage, in GB
+* Additional software to be installed, including:
+    * Python/R/other packages
+    * Additional kernels
+    * Jupyter extensions
+    * Other software
+
 ## A Jupyter environment
 When an environment has been created for you, you will be provided with the following information:
 
-* JupyterHub URL: `https://jupyter.something.sda-dev-projects.nl`
-* User management API URL: `https://api.something.sda-dev-projects.nl`
+* JupyterHub URL: `https://jupyter.something.sda-projects.nl`
+* User management API URL: `https://api.something.sda-projects.nl`
 * User management API-key: \*
-* User management web portal URL: `https://portal.something.sda-dev-projects.nl`
+* User management web portal URL: `https://portal.something.sda-projects.nl`
 * User management web portal administrator username: \*
 * User management web portal administrator password: \*
-* Shared data storage URL: `https://data.something.sda-dev-projects.nl`
+* Shared data storage URL: `https://data.something.sda-projects.nl`
 * Shared data storage access key: \*
 * Shared data storage secret key: \*
 
