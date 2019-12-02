@@ -20,3 +20,6 @@ The notebook image comes with **nbgitpuller** pre-installed, which allows you to
 
 ## Installing packages
 Although the installation of new packages and extensions is possible through tools like conda and pip, this is not supported in the SURFsara notebook environments. SURFsara does not accept liability for any errors and/or data loss  arising due to additionally installed, or changed software.
+
+## Troubleshooting
+Troubleshooting tips can be found on the [troubleshooting page](TROUBLESHOOTING.md).

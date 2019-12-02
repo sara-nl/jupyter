@@ -52,4 +52,4 @@ For instructions on using the API, see the [API documentation](USERMANAGEMENT-AP
 Instructions on how to manage and share data and notebooks through nbgitpuller or the shared data storage can be found in the [data management & sharing guide](SHARING-DATA.md).
 
 ## Using the environment
-Instructions on using the Jupyter notebook environment can be found in the [usage documentation](USAGE.md).
+Instructions on using the Jupyter notebook environment can be found in the [usage documentation](USAGE.md). For troubleshooting tips, see the documentation page [here](TROUBLESHOOTING.md).
