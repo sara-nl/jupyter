@@ -1,3 +1,6 @@
+<img height="75px" src="images/surfsara.png"/>
+<hr/>
+
 # SURFsara Jupyter notebook administration guide
 **This repository provides a user guide for administrators of SURFsara [Jupyter notebook service](https://www.surf.nl/en/jupyter-notebook-accessible-and-interactive-data-analysis-for-research-and-education)**.
 
@@ -5,16 +8,15 @@ For more information about this service, please see the overview page at the [SU
 
 This user guide will assume you will have obtained access to a deployed Jupyter notebook environment, and will explain how to manage users and data in the environment.
 
-## Onboarding information Jupyter environment
-To create an Jupyter environment, Surfsara requires onboarding information. 
-This information is used to right-size the Jupyter cluster, perpare the (shared) storage and install the required software packages. The below information should be provided:
+## Creating a new Jupyter environment
+To create an Jupyter environment, SURFsara requires some information about the environment's hardware capacity and the software installation.  This information is used to right-size the Jupyter cluster, prepare the (shared) storage and install the required software packages. The below information should be provided:
 
-* The start and end date of the deployment
+* The start and end date of the environment
 * The number of users
-* The capacity of the notebook pods, given as:
-    * Light: 1 vcore, 3GB RAM
-    * Medium: 2 vcores, 6 GB RAM
-    * Heavy: 4 vcores, 12 GB RAM
+* The capacity of the notebook pods. Three 'sizes' are available:
+    * **Light**: 1 vcore, 3 GB RAM
+    * **Medium**: 2 vcores, 6 GB RAM
+    * **Heavy**: 4 vcores, 12 GB RAM
 * The per-user storage, in GB
 * The amount of shared storage, in GB
 * Additional software to be installed, including:
