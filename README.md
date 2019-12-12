@@ -8,7 +8,7 @@ For more information about this service, please see the overview page at the [SU
 
 This user guide will assume you will have obtained access to a deployed Jupyter notebook environment, and will explain how to manage users and data in the environment.
 
-## A Jupyter environment
+## Jupyter environment components
 A Jupyter environment consists of a number of components:
 
 1. A JupyterHub interface
