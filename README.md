@@ -8,6 +8,19 @@ For more information about this service, please see the overview page at the [SU
 
 This user guide will assume you will have obtained access to a deployed Jupyter notebook environment, and will explain how to manage users and data in the environment.
 
+## A Jupyter environment
+A Jupyter environment consists of a number of components:
+
+1. A JupyterHub interface
+1. A customizable Docker notebook image
+1. A web portal and an API for managing users
+1. Persistent user storage
+1. A persistent, shared **read-only** data storage
+
+The JupyterHub interface is the entry point for end-users. By logging in, the Hub will start an isolated notebook container based on a Docker notebook image. This image can be customized by installing additional kernels, libraries, extensions and other software. A web portal is available for easy management of users, and a user management API for automated control through scripting.
+
+Each user's notebook environment has its own persistent storage attached. Changes made to the data by the user will be saved between consecutive logins to the environment. In addition, a shared read-only data storage is available for hosting large data sets. Each user has read-only access to this data store in their own container.
+
 ## Creating a new Jupyter environment
 To create an Jupyter environment, SURFsara requires some information about the environment's hardware capacity and the software installation.  This information is used to right-size the Jupyter cluster, prepare the (shared) storage and install the required software packages. The below information should be provided:
 
