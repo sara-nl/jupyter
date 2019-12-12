@@ -21,6 +21,8 @@ The JupyterHub interface is the entry point for end-users. By logging in, the Hu
 
 Each user's notebook environment has its own persistent storage attached. Changes made to the data by the user will be saved between consecutive logins to the environment. In addition, a shared read-only data storage is available for hosting large data sets. Each user has read-only access to this data store in their own container.
 
+The remainder of this page provides instructions on how to create a new Jupyter deployment, as well as links to a number of pages describing how to use the environment, and how to manage users and data.
+
 ## Creating a new Jupyter environment
 To create an Jupyter environment, SURFsara requires some information about the environment's hardware capacity and the software installation.  This information is used to right-size the Jupyter cluster, prepare the (shared) storage and install the required software packages. The below information should be provided:
 
