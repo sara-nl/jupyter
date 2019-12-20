@@ -1,5 +1,5 @@
 # Managing & sharing data
-The Jupyter notebook service contains two data stores by default: the user's home directory, and the shared data storage.
+The Jupyter notebook service contains two data stores by default: the user's home directory, and the shared data storage. The shared data storage is an optional component of the service, and is disabled by default.
 
 ## User home directories
 When a user's notebook container starts, the *user's home directory* will be available as **persistent storage** inside the notebook container. Regardless of the user name, the persistent storage will be mounted under `/home/jovyan`. Changes made to files and directories under this path will persist between logins and container restarts.
