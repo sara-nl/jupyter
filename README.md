@@ -15,7 +15,7 @@ A Jupyter environment consists of a number of components:
 1. A customizable Docker notebook image
 1. A web portal and an API for managing users
 1. Persistent user storage
-1. A persistent, shared **read-only** data storage
+1. A persistent, shared **read-only** data storage (optional)
 
 The JupyterHub interface is the entry point for end-users. By logging in, the Hub will start an isolated notebook container based on a Docker notebook image. This image can be customized by installing additional kernels, libraries, extensions and other software. A web portal is available for easy management of users, and a user management API for automated control through scripting.
 
