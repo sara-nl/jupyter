@@ -37,7 +37,7 @@ To start a notebook container with an automatic clone of a git repository throug
 Alternatively, you can generate the URL manually by creating it according to the following format:
 
 ```
-https://jupyter.something.sda-projects.nl/hub/user-redirect/git-pull?repo=<your-repo-url>&branch=<your-branch-name>&subPath=<redirection>
+https://jupyter.something.k8s.surfsara.nl/hub/user-redirect/git-pull?repo=<your-repo-url>&branch=<your-branch-name>&subPath=<redirection>
 ```
 
 For example, with the following parameters:

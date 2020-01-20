@@ -2,7 +2,7 @@
 This page will provide instructions on how to use the environment as an end-user.
 
 ## Starting a notebook environment
-The hub (or JupyterHub) is the entry point for your users and is located at `https://jupyter.something.sda-projects.nl`. After logging in with a valid username and password, a notebook environment will start in a container. The initial start up process may take up to two minutes.
+The hub (or JupyterHub) is the entry point for your users and is located at `https://jupyter.something.k8s.surfsara.nl`. After logging in with a valid username and password, a notebook environment will start in a container. The initial start up process may take up to two minutes.
 
 After a container has started, the Jupyter notebook environment will display a file browser showing you all files and directories in your **home directory**. Any changes you make in your home directory will be saved and available in future logins. This includes changes to notebooks in your home directory, as well as modifications to any other data.
 

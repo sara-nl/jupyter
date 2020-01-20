@@ -44,13 +44,13 @@ To create an Jupyter environment, SURFsara requires some information about the e
 ## A Jupyter environment
 When an environment has been created for you, you will be provided with the following information:
 
-* JupyterHub URL: `https://jupyter.something.sda-projects.nl`
-* User management API URL: `https://api.something.sda-projects.nl`
+* JupyterHub URL: `https://jupyter.something.k8s.surfsara.nl`
+* User management API URL: `https://api.something.k8s.surfsara.nl`
 * User management API-key: \*
-* User management web portal URL: `https://portal.something.sda-projects.nl`
+* User management web portal URL: `https://portal.something.k8s.surfsara.nl`
 * User management web portal administrator username: \*
 * User management web portal administrator password: \*
-* Shared data storage URL: `https://data.something.sda-projects.nl`
+* Shared data storage URL: `https://data.something.k8s.surfsara.nl`
 * Shared data storage access key: \*
 * Shared data storage secret key: \*
 
