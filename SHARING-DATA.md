@@ -52,12 +52,12 @@ For example, with the following parameters:
 the output will be:
 
 ```
-https://jupyter.example.sda-projects.nl/hub/user-redirect/git-pull?repo=https://github.com/sara-nl/jupyter-bigdata-notebooks&branch=master&subPath=notebooks/01-python.ipynb
+https://jupyter.example.k8s.surfsara.nl/hub/user-redirect/git-pull?repo=https://github.com/sara-nl/jupyter-bigdata-notebooks&branch=master&subPath=notebooks/01-python.ipynb
 ```
 
 When this link is clicked the following will happen:
 
-1. The user will be promted for login credentials for the Jupyter notebook environment at `https://jupyter.example.sda-projects.nl/`.
+1. The user will be promted for login credentials for the Jupyter notebook environment at `https://jupyter.example.k8s.surfsara.nl/`.
 1. After logging in, a notebook container will be started, and the repository at [https://github.com/sara-nl/jupyter-bigdata-notebooks](https://github.com/sara-nl/jupyter-bigdata-notebooks) will be cloned from the **master** branch to the user's home directory.
 1. The user is redirected to **notebooks/01-python.ipynb** of the repository.
 

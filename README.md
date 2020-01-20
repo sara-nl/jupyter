@@ -39,7 +39,7 @@ To create an Jupyter environment, SURFsara requires some information about the e
     * Additional kernels
     * Jupyter extensions
     * Other software
-* A short name for the course that can be used as part of the URL. For example, for a course 'Machine Learning 1' this name can be `ml1`, which would result in the following URL to log in to the Hub: `https://jupyter.ml1.sda-projects.nl`.
+* A short name for the course that can be used as part of the URL. For example, for a course 'Machine Learning 1' this name can be `ml1`, which would result in the following URL to log in to the Hub: `https://jupyter.ml1.k8s.surfsara.nl`.
 
 ## A Jupyter environment
 When an environment has been created for you, you will be provided with the following information:
