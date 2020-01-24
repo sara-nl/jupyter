@@ -18,6 +18,9 @@ Additional software packages, kernels and Jupyter extensions can be installed if
 
 The notebook image comes with **nbgitpuller** pre-installed, which allows you to share data with your users via a link. For more information, see the documentation page about [sharing data](SHARING.md).
 
+## Downloading user data
+Users can download data from their home directories using the instructions found in the [downloading data section](DOWNLOAD-USER-DATA.md).
+
 ## Installing packages
 Although the installation of new packages and extensions is possible through tools like conda and pip, this is not supported in the SURFsara notebook environments. SURFsara does not accept liability for any errors and/or data loss  arising due to additionally installed, or changed software.
 
